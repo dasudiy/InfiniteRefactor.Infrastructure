@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>AirMaster.Infrastructure</RootNamespace>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <!-- Infrastructure.Core dependencies (used namespaces only) -->
+    <ItemGroup>
+        <PackageReference Include="System.Runtime.Caching" Version="9.0.6" />
+        <PackageReference Include="System.Net.Http.Json" Version="9.0.6" />
+        <PackageReference Include="System.Reflection.Emit" Version="4.7.0" />
+        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.6" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="9.0.6" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.6" />
+        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.6" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="9.0.6" />
+        <PackageReference Include="Dapper" Version="2.1.66" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="NLog" Version="6.0.1" />
+        <PackageReference Include="YamlDotNet" Version="16.3.0" />
+        <PackageReference Include="CsQuery.Core" Version="2.0.1" />
+        <PackageReference Include="BouncyCastle.Cryptography" Version="2.5.1" />
+        <PackageReference Include="StackExchange.Redis" Version="2.8.41" />
+    </ItemGroup>
+
+    <!-- Infrastructure.DataService.Core dependencies -->
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+        <PackageReference Include="Castle.Core" Version="5.2.1" />
+        <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="9.0.7" />
+        <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="9.0.7" />
+        <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
+    </ItemGroup>
+
+</Project>

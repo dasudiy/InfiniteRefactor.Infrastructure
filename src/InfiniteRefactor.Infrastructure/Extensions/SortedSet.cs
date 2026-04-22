@@ -1,0 +1,15 @@
+﻿using System.Collections.Generic;
+
+namespace AirMaster.Infrastructure.Extensions
+{
+    public static class SortedSetExtension
+    {
+        public static void AddRange<T>(this SortedSet<T> source, IEnumerable<T> range)
+        {
+            foreach (var item in range)
+            {
+                source.Add(item);
+            }
+        }
+    }
+}
