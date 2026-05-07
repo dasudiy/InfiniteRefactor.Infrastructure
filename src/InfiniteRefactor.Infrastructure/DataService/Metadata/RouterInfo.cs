@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AirMaster.Infrastructure.DataService.Metadata
+namespace InfiniteRefactor.Infrastructure.DataService.Metadata
 {
 
 

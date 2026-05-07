@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace AirMaster.Infrastructure.Extensions
+namespace InfiniteRefactor.Infrastructure.Extensions
 {
     public static class Validator
     {

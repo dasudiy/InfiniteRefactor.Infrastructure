@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using InfiniteRefactor.Infrastructure.Extensions;
 
-using AirMaster.Infrastructure.Extensions;
-
-namespace AirMaster.Infrastructure.Serializer
+namespace InfiniteRefactor.Infrastructure.Serializer
 {
     public class SimpleSerializer : TextSerializer
     {

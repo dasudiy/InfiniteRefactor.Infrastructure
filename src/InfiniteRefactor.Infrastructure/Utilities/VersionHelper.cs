@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AirMaster.Infrastructure.Utilities;
+namespace InfiniteRefactor.Infrastructure.Utilities;
 public static class VersionHelper
 {
     public static bool TryParseVersion(string version, out Version parsed)

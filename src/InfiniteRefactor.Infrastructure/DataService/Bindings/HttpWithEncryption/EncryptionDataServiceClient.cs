@@ -1,19 +1,7 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Bindings.Http;
-using AirMaster.Infrastructure.DataService.Common;
-using AirMaster.Infrastructure.DataService.Internal;
-using AirMaster.Infrastructure.DataService.Metadata;
-using AirMaster.Infrastructure.Extensions;
-using AirMaster.Infrastructure.Net;
-using AirMaster.Infrastructure.Security;
-using AirMaster.Infrastructure.Serializer;
-using CsQuery.EquationParser.Implementation.Functions;
-using CsQuery.ExtensionMethods.Internal;
-using Newtonsoft.Json;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -22,8 +10,16 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.Http;
+using InfiniteRefactor.Infrastructure.DataService.Common;
+using InfiniteRefactor.Infrastructure.DataService.Internal;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
+using InfiniteRefactor.Infrastructure.Net;
+using InfiniteRefactor.Infrastructure.Security;
+using InfiniteRefactor.Infrastructure.Serializer;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.HttpWithEncryption
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.HttpWithEncryption
 {
     public class EncryptionDataServiceClient : DataServiceClientBase
     {
@@ -75,7 +71,7 @@ namespace AirMaster.Infrastructure.DataService.Bindings.HttpWithEncryption
 
                         if (GZip)
                         {
-                            outputStream = new System.IO.Compression.GZipStream(outputStream, System.IO.Compression.CompressionMode.Compress);
+                            outputStream = new GZipStream(outputStream, CompressionMode.Compress);
                             requestContentEncoding = AlgName.ToLower() + "+gzip";
                         }
 
@@ -119,7 +115,7 @@ namespace AirMaster.Infrastructure.DataService.Bindings.HttpWithEncryption
                         {
                             if (contentEncoding.Any(t => t.IndexOf("gzip") > 0))
                             {
-                                inputStream = new System.IO.Compression.GZipStream(cs, System.IO.Compression.CompressionMode.Decompress);
+                                inputStream = new GZipStream(cs, CompressionMode.Decompress);
                             }
                         }
 
@@ -180,7 +176,7 @@ namespace AirMaster.Infrastructure.DataService.Bindings.HttpWithEncryption
 
                         if (GZip)
                         {
-                            outputStream = new System.IO.Compression.GZipStream(outputStream, System.IO.Compression.CompressionMode.Compress);
+                            outputStream = new GZipStream(outputStream, CompressionMode.Compress);
                             requestContentEncoding = AlgName.ToLower() + "+gzip";
                         }
 
@@ -224,7 +220,7 @@ namespace AirMaster.Infrastructure.DataService.Bindings.HttpWithEncryption
                         {
                             if (contentEncoding.Any(t => t.IndexOf("gzip") > 0))
                             {
-                                inputStream = new System.IO.Compression.GZipStream(cs, System.IO.Compression.CompressionMode.Decompress);
+                                inputStream = new GZipStream(cs, CompressionMode.Decompress);
                             }
                         }
 

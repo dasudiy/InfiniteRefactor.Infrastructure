@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AirMaster.Infrastructure.DataService.Annotations
+namespace InfiniteRefactor.Infrastructure.DataService.Annotations
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = false)]
     public class DataServiceAttribute : System.Attribute

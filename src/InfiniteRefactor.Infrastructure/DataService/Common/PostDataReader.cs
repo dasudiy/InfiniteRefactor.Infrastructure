@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
-using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Metadata;
-using AirMaster.Infrastructure.Serializer;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
+using InfiniteRefactor.Infrastructure.Serializer;
 using Microsoft.AspNetCore.Http;
 
-namespace AirMaster.Infrastructure.DataService.Common
+namespace InfiniteRefactor.Infrastructure.DataService.Common
 {
     /// <summary>
     /// 无需使用泛型，泛型多余了，反而造成ValueReader无法固定配置

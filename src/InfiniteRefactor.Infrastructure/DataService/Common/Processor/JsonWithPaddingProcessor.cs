@@ -1,8 +1,8 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Abstractions.Processor;
-using AirMaster.Infrastructure.Serializer;
+﻿using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions.Processor;
+using InfiniteRefactor.Infrastructure.Serializer;
 
-namespace AirMaster.Infrastructure.DataService.Common.Processor
+namespace InfiniteRefactor.Infrastructure.DataService.Common.Processor
 {
     public class JsonWithPaddingProcessor : PostProcessorAttribute
     {

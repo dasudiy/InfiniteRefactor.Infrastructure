@@ -1,11 +1,10 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Annotations;
-using AirMaster.Infrastructure.Extensions;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Annotations;
+using InfiniteRefactor.Infrastructure.Extensions;
 
-namespace AirMaster.Infrastructure.DataService.Common.Activator
+namespace InfiniteRefactor.Infrastructure.DataService.Common.Activator
 {
     public class ConfigurableServiceCreator : IServiceActivator
     {

@@ -1,8 +1,8 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.Session;
-using System.Net;
+﻿using System.Net;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.Session;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.Stream.Infrastructure
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Infrastructure
 {
     internal class StreamContext : DataServiceContext
     {

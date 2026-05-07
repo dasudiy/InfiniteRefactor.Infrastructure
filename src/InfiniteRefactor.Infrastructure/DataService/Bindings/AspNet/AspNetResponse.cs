@@ -1,10 +1,10 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using Microsoft.AspNetCore.Http;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using System.Text;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using Microsoft.AspNetCore.Http;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.AspNet
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.AspNet
 {
     internal class AspNetResponse : DataServiceResponse
     {

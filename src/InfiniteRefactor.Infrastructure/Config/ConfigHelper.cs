@@ -1,6 +1,6 @@
 ﻿using System.Collections.Specialized;
 
-namespace AirMaster.Infrastructure.Config
+namespace InfiniteRefactor.Infrastructure.Config
 {
     public abstract class ConfigHelper
     {

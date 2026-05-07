@@ -1,12 +1,10 @@
-﻿using AirMaster.Infrastructure.DataService.Metadata;
-using AirMaster.Infrastructure.Extensions;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net;
-using System.Reflection;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
+using InfiniteRefactor.Infrastructure.Extensions;
 
-namespace AirMaster.Infrastructure.DataService.Abstractions
+namespace InfiniteRefactor.Infrastructure.DataService.Abstractions
 {
     public abstract class DataServiceRequest : IDisposable
     {

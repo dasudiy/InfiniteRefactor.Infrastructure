@@ -7,7 +7,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading;
 
-namespace AirMaster.Infrastructure.Linq.Linqkit
+namespace InfiniteRefactor.Infrastructure.Linq.Linqkit
 {
     public static class DynamicQueryable
     {

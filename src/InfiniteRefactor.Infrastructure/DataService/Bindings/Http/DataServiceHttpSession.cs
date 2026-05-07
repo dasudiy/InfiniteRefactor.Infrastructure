@@ -1,4 +1,4 @@
-﻿namespace AirMaster.Infrastructure.DataService.Bindings.Http
+﻿namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Http
 {
     //public class DataServiceHttpSession : ApplicationSession
     //{

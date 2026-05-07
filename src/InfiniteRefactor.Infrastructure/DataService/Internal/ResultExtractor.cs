@@ -1,7 +1,7 @@
-﻿using AirMaster.Infrastructure.Serializer;
-using System;
+﻿using System;
+using InfiniteRefactor.Infrastructure.Serializer;
 
-namespace AirMaster.Infrastructure.DataService.Internal
+namespace InfiniteRefactor.Infrastructure.DataService.Internal
 {
     public class ResultExtractor
     {

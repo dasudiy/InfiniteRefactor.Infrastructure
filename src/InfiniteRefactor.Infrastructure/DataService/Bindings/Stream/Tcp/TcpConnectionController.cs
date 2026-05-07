@@ -1,9 +1,9 @@
-﻿using AirMaster.Infrastructure.DataService.Bindings.Stream.Infrastructure;
-using System;
+﻿using System;
 using System.Net;
 using System.Net.Sockets;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Infrastructure;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.Stream.Tcp
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Tcp
 {
     internal class TcpConnectionController : IConnectionController
     {

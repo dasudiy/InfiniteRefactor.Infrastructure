@@ -1,10 +1,10 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using System;
+﻿using System;
 using System.IO;
 using System.IO.Compression;
 using System.Threading.Tasks;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.Http
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Http
 {
     public class DataServiceHttpResponse : DataServiceResponse
     {

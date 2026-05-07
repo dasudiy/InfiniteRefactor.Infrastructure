@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace AirMaster.Infrastructure.Linq.Linqkit
+namespace InfiniteRefactor.Infrastructure.Linq.Linqkit
 {
     /// <summary>
     /// See http://www.albahari.com/expressions for information and examples.

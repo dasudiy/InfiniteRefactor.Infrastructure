@@ -1,10 +1,10 @@
-﻿using AirMaster.Infrastructure.Extensions;
-using System;
+﻿using System;
 using System.Collections.Specialized;
 using System.Configuration;
 using System.Linq;
+using InfiniteRefactor.Infrastructure.Extensions;
 
-namespace AirMaster.Infrastructure.Config
+namespace InfiniteRefactor.Infrastructure.Config
 {
     public class ClassicConfigFileProvider : ConfigHelper
     {

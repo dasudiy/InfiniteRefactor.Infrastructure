@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace AirMaster.Infrastructure.Session
+namespace InfiniteRefactor.Infrastructure.Session
 {
     public abstract class ApplicationSession : IDisposable
     {

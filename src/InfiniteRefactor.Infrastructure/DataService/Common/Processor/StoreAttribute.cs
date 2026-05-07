@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AirMaster.Infrastructure.DataService.Common.Processor
+namespace InfiniteRefactor.Infrastructure.DataService.Common.Processor
 {
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
     public class StoreAttribute : Attribute

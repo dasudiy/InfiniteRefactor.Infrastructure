@@ -1,12 +1,11 @@
-﻿using Microsoft.Extensions.Configuration;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
+using InfiniteRefactor.Infrastructure.Extensions;
+using Microsoft.Extensions.Configuration;
 
-using AirMaster.Infrastructure.Extensions;
-
-namespace AirMaster.Infrastructure.Config
+namespace InfiniteRefactor.Infrastructure.Config
 {
     public class JsonConfigFileProvider : ConfigHelper
     {

@@ -1,4 +1,4 @@
-﻿namespace AirMaster.Infrastructure.Session
+﻿namespace InfiniteRefactor.Infrastructure.Session
 {
     public interface IUser
     {

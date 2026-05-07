@@ -1,9 +1,9 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Bindings.Stream.Infrastructure;
-using AirMaster.Infrastructure.Session;
-using System;
+﻿using System;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Infrastructure;
+using InfiniteRefactor.Infrastructure.Session;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.RabbitMQ
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.RabbitMQ
 {
     class RabbitMQContext : DataServiceContext
     {

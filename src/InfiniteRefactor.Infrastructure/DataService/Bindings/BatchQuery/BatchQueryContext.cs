@@ -1,7 +1,7 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.Session;
+﻿using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.Session;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.BatchQuery
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.BatchQuery
 {
     public class BatchQueryContext : DataServiceContext
     {

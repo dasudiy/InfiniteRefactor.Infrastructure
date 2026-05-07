@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.Versioning;
 
-namespace AirMaster.Infrastructure.Utilities
+namespace InfiniteRefactor.Infrastructure.Utilities
 {
     [SupportedOSPlatform("windows")]
     public class EventSystem : IDisposable

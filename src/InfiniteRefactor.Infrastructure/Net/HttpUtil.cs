@@ -1,11 +1,11 @@
-﻿using AirMaster.Infrastructure.Extensions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Web;
+using InfiniteRefactor.Infrastructure.Extensions;
 
-namespace AirMaster.Infrastructure.Net
+namespace InfiniteRefactor.Infrastructure.Net
 {
     public static class HttpUtil
     {

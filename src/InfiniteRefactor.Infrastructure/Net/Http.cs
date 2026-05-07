@@ -1,5 +1,4 @@
-﻿using AirMaster.Infrastructure.Serializer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
@@ -7,13 +6,11 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text;
-using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
+using InfiniteRefactor.Infrastructure.Serializer;
 
-
-namespace AirMaster.Infrastructure.Net
+namespace InfiniteRefactor.Infrastructure.Net
 {
     public class Http : System.Net.Http.HttpClient
     {

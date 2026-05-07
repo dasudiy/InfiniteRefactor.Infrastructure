@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace AirMaster.Infrastructure.DataService.Abstractions.Processor
+namespace InfiniteRefactor.Infrastructure.DataService.Abstractions.Processor
 {
     public interface IPostProcessor : IHavePriority
     {

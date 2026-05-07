@@ -1,20 +1,18 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Common;
-using AirMaster.Infrastructure.DataService.Internal;
-using AirMaster.Infrastructure.DataService.Metadata;
-using AirMaster.Infrastructure.Net;
-using AirMaster.Infrastructure.Serializer;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Common;
+using InfiniteRefactor.Infrastructure.DataService.Internal;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
+using InfiniteRefactor.Infrastructure.Net;
+using InfiniteRefactor.Infrastructure.Serializer;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.Http
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Http
 {
     public class DataServiceHttpClient : DataServiceClientBase
     {

@@ -1,9 +1,9 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Metadata;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.Stream.Infrastructure
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Infrastructure
 {
     public class RequestInfo : DataServiceRouter
     {

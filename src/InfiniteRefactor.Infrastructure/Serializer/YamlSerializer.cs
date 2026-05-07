@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using YamlDotNet.Serialization;
 
-namespace AirMaster.Infrastructure.Serializer
+namespace InfiniteRefactor.Infrastructure.Serializer
 {
     public class YamlSerializer : ISerializer
     {

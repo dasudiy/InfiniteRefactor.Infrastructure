@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Common;
-using AirMaster.Infrastructure.DataService.Metadata;
+﻿using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Common;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
 
-namespace AirMaster.Infrastructure.DataService
+namespace InfiniteRefactor.Infrastructure.DataService
 {
     public static class DataServiceDefaultConfiguration
     {

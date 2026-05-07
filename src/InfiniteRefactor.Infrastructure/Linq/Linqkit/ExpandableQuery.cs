@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace AirMaster.Infrastructure.Linq.Linqkit
+namespace InfiniteRefactor.Infrastructure.Linq.Linqkit
 {
     /// <summary>
     /// An IQueryable wrapper that allows us to visit the query's expression tree just before LINQ to SQL gets to it.

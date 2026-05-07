@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-namespace AirMaster.Infrastructure.Utilities
+namespace InfiniteRefactor.Infrastructure.Utilities
 {
     public class MarshalHelper
     {

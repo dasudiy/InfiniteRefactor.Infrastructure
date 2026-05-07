@@ -1,8 +1,8 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.Stream.Infrastructure
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Infrastructure
 {
     public class StreamResponse : DataServiceResponse
     {

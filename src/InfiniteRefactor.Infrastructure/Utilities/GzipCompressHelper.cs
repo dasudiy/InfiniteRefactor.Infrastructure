@@ -3,7 +3,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Text;
 
-namespace AirMaster.Infrastructure.Utilities;
+namespace InfiniteRefactor.Infrastructure.Utilities;
 
 public static class GzipCompressHelper
 {

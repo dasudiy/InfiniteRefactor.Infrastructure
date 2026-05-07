@@ -1,12 +1,12 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Abstractions.Processor;
-using AirMaster.Infrastructure.DataService.Annotations;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions.Processor;
+using InfiniteRefactor.Infrastructure.DataService.Annotations;
 
-namespace AirMaster.Infrastructure.DataService.Metadata
+namespace InfiniteRefactor.Infrastructure.DataService.Metadata
 {
     public class ServiceInfo
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Snowflake
+namespace InfiniteRefactor.Infrastructure.Utilities.Snowflake
 {
     public class InvalidSystemClock : Exception
     {

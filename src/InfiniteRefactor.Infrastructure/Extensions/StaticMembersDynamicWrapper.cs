@@ -2,7 +2,7 @@
 using System.Dynamic;
 using System.Reflection;
 
-namespace AirMaster.Infrastructure.Extensions
+namespace InfiniteRefactor.Infrastructure.Extensions
 {
     public class StaticMembersDynamicWrapper : DynamicObject
     {

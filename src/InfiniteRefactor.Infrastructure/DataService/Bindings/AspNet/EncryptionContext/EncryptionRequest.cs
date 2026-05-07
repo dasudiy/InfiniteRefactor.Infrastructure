@@ -1,16 +1,16 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.Net;
-using AirMaster.Infrastructure.Security;
-using Microsoft.AspNetCore.Http;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.Net;
+using InfiniteRefactor.Infrastructure.Security;
+using Microsoft.AspNetCore.Http;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.AspNet.EncryptionContext
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.AspNet.EncryptionContext
 {
     public class EncryptionRequest : DataServiceRequest
     {

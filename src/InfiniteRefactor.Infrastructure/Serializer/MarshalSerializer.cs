@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace AirMaster.Infrastructure.Serializer
+namespace InfiniteRefactor.Infrastructure.Serializer
 {
     public class MarshalSerializer
     {

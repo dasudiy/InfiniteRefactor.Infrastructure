@@ -2,10 +2,27 @@
 
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
-        <RootNamespace>AirMaster.Infrastructure</RootNamespace>
+        <RootNamespace>InfiniteRefactor.Infrastructure</RootNamespace>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>disable</Nullable>
+
+        <!-- NuGet packaging -->
+        <PackageId>InfiniteRefactor.Infrastructure</PackageId>
+        <Version>$(VERSION)</Version>
+        <Authors>InfiniteRefactor</Authors>
+        <Description>Shared infrastructure library — core utilities, DataService bindings, caching, messaging, and more.</Description>
+        <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
+        <PackageTags>infrastructure;dataservice;rpc;middleware;rabbitmq;websocket;serialization;utilities;dotnet8</PackageTags>
+        <PackageProjectUrl>https://github.com/InfiniteRefactor/InfiniteRefactor.Infrastructure</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/InfiniteRefactor/InfiniteRefactor.Infrastructure</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="../../README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
 
     <!-- Infrastructure.Core dependencies (used namespaces only) -->
     <ItemGroup>
@@ -18,13 +35,13 @@
         <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.6" />
         <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.6" />
         <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="9.0.6" />
-        <PackageReference Include="Dapper" Version="2.1.66" />
+        <!--<PackageReference Include="Dapper" Version="2.1.66" />-->
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="NLog" Version="6.0.1" />
         <PackageReference Include="YamlDotNet" Version="16.3.0" />
-        <PackageReference Include="CsQuery.Core" Version="2.0.1" />
+        <!--<PackageReference Include="CsQuery.Core" Version="2.0.1" />
         <PackageReference Include="BouncyCastle.Cryptography" Version="2.5.1" />
-        <PackageReference Include="StackExchange.Redis" Version="2.8.41" />
+        <PackageReference Include="StackExchange.Redis" Version="2.8.41" />-->
     </ItemGroup>
 
     <!-- Infrastructure.DataService.Core dependencies -->

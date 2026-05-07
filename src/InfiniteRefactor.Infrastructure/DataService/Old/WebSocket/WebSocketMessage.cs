@@ -1,8 +1,8 @@
-﻿using AirMaster.Infrastructure.Extensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using InfiniteRefactor.Infrastructure.Extensions;
 
-namespace AirMaster.Infrastructure.DataService.Old.WebSocket
+namespace InfiniteRefactor.Infrastructure.DataService.Old.WebSocket
 {
     public class WebSocketMessage
     {

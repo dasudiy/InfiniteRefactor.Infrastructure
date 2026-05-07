@@ -1,14 +1,14 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Abstractions.Processor;
-using AirMaster.Infrastructure.DataService.Annotations;
-using AirMaster.Infrastructure.Serializer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions.Processor;
+using InfiniteRefactor.Infrastructure.DataService.Annotations;
+using InfiniteRefactor.Infrastructure.Serializer;
 
-namespace AirMaster.Infrastructure.DataService.Metadata
+namespace InfiniteRefactor.Infrastructure.DataService.Metadata
 {
     public class ActionInfo
     {

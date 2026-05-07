@@ -1,6 +1,6 @@
-﻿using AirMaster.Infrastructure.DataService.Metadata;
+﻿using InfiniteRefactor.Infrastructure.DataService.Metadata;
 
-namespace AirMaster.Infrastructure.DataService.Abstractions
+namespace InfiniteRefactor.Infrastructure.DataService.Abstractions
 {
     public abstract class DataServiceRouter //: MarshalByRefObject
     {

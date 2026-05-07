@@ -1,9 +1,9 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using System;
+﻿using System;
 using System.IO;
 using System.Text;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.BatchQuery
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.BatchQuery
 {
     public class BatchQueryResponse : DataServiceResponse
     {

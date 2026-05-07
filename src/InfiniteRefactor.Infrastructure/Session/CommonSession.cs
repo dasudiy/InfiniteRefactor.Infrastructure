@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace AirMaster.Infrastructure.Session
+namespace InfiniteRefactor.Infrastructure.Session
 {
     public class CommonSession : ApplicationSession
     {

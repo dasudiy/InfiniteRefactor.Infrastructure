@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AirMaster.Infrastructure.DataService.Internal
+namespace InfiniteRefactor.Infrastructure.DataService.Internal
 {
     public class DataServiceResult
     {

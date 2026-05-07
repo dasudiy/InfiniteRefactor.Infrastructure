@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace AirMaster.Infrastructure.DataService.Metadata
+namespace InfiniteRefactor.Infrastructure.DataService.Metadata
 {
     public class SwaggerParameterAttribute : Attribute
     {

@@ -1,9 +1,9 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.Session;
+﻿using System;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.Session;
 using Microsoft.AspNetCore.Http;
-using System;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.AspNet.EncryptionContext
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.AspNet.EncryptionContext
 {
     public class EncryptionHttpContext : DataServiceContext
     {

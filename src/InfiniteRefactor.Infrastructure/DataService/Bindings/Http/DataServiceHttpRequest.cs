@@ -1,13 +1,13 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.Net;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.Net;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.Http
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Http
 {
     public class DataServiceHttpRequest : DataServiceRequest
     {

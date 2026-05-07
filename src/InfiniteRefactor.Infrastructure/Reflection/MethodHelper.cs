@@ -1,7 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.Reflection;
 
-namespace AirMaster.Infrastructure.Reflection
+namespace InfiniteRefactor.Infrastructure.Reflection
 {
     public static class MethodHelper
     {

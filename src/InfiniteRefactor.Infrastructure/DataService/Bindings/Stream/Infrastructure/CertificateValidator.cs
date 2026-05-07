@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.Stream.Infrastructure
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Infrastructure
 {
     class CertificateValidator
     {

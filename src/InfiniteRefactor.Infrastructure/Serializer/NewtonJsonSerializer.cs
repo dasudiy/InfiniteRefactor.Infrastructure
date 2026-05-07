@@ -1,11 +1,10 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using InfiniteRefactor.Infrastructure.Extensions;
+using Newtonsoft.Json;
 
-using AirMaster.Infrastructure.Extensions;
-
-namespace AirMaster.Infrastructure.Serializer
+namespace InfiniteRefactor.Infrastructure.Serializer
 {
     public class NewtonJsonSerializerAdapter : TextSerializer
     {

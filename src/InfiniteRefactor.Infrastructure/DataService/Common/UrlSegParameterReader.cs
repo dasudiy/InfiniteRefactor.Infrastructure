@@ -1,11 +1,10 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Metadata;
-using AirMaster.Infrastructure.Extensions;
-
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
+using InfiniteRefactor.Infrastructure.Extensions;
 
-namespace AirMaster.Infrastructure.DataService.Common
+namespace InfiniteRefactor.Infrastructure.DataService.Common
 {
     public class UrlSegParameterReader<T> : IParameterValueReader
     {

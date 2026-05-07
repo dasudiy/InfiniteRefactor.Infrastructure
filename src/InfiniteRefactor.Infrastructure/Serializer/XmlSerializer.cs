@@ -4,10 +4,9 @@ using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
+using InfiniteRefactor.Infrastructure.Extensions;
 
-using AirMaster.Infrastructure.Extensions;
-
-namespace AirMaster.Infrastructure.Serializer
+namespace InfiniteRefactor.Infrastructure.Serializer
 {
     public class XmlSerializer : StreamSerializer
     {

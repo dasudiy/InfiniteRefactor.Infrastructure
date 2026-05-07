@@ -1,15 +1,13 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Annotations;
-using AirMaster.Infrastructure.DataService.Common.Processor;
-using AirMaster.Infrastructure.Extensions;
-
+﻿using System;
+using System.Linq;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Annotations;
+using InfiniteRefactor.Infrastructure.DataService.Common.Processor;
+using InfiniteRefactor.Infrastructure.Extensions;
 using Newtonsoft.Json;
 using NLog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace AirMaster.Infrastructure.DataService.Metadata
+namespace InfiniteRefactor.Infrastructure.DataService.Metadata
 {
     [DataService(Name = "Metadata")]
     [SwaggerIgnore]

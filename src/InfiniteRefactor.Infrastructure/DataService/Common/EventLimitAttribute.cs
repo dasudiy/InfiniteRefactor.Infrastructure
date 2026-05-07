@@ -1,11 +1,11 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Abstractions.Processor;
-using NLog;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions.Processor;
+using NLog;
 
-namespace AirMaster.Infrastructure.DataService.Common
+namespace InfiniteRefactor.Infrastructure.DataService.Common
 {
     public class EventLimitAttribute : PreProcessorAttribute
     {

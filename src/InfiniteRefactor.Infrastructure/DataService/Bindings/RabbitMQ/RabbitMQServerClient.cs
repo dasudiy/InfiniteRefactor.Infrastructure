@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Metadata;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.RabbitMQ
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.RabbitMQ
 {
     internal class RabbitMQServerClient : DataServiceClientBase
     {

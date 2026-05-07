@@ -1,9 +1,8 @@
-﻿using AirMaster.Infrastructure.DataService;
-using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.Session;
-using System;
+﻿using System;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.Session;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.Http
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Http
 {
     public class DataServiceHttpContext : DataServiceContext
     {

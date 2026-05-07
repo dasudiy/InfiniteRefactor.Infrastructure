@@ -1,10 +1,10 @@
-﻿using NLog;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using NLog;
 
-namespace AirMaster.Infrastructure.Extensions
+namespace InfiniteRefactor.Infrastructure.Extensions
 {
     public static class AutoRetry
     {

@@ -1,12 +1,12 @@
-﻿using AirMaster.Infrastructure.DataService.Bindings.Stream.Infrastructure;
-using NLog;
-using System;
+﻿using System;
 using System.IO.Pipes;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Infrastructure;
+using NLog;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.Stream.NP
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.NP
 {
     public class NamedPipeServer : StreamServer
     {

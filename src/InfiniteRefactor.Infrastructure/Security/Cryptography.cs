@@ -5,10 +5,7 @@ using System.Runtime.Versioning;
 using System.Security.Cryptography;
 using System.Text;
 
-using Org.BouncyCastle.Crypto.Digests;
-using Org.BouncyCastle.Utilities.Encoders;
-
-namespace AirMaster.Infrastructure.Security
+namespace InfiniteRefactor.Infrastructure.Security
 {
     public static class Cryptography
     {
@@ -149,15 +146,15 @@ namespace AirMaster.Infrastructure.Security
             return KeyedHash("HMACSHA256", key, text, salt, encoding);
         }
 
-        public static string Sm3Hash(this string data, Encoding encoding = null)
-        {
-            encoding = encoding ?? Encoding.UTF8;
-            var sm3Output = new byte[32];
-            var sm3 = new SM3Digest();
-            sm3.BlockUpdate(encoding.GetBytes(data));
-            sm3.DoFinal(sm3Output, 0);
-            return encoding.GetString(Hex.Encode(sm3Output));
-        }
+        // public static string Sm3Hash(this string data, Encoding encoding = null)
+        // {
+        //     encoding = encoding ?? Encoding.UTF8;
+        //     var sm3Output = new byte[32];
+        //     var sm3 = new SM3Digest();
+        //     sm3.BlockUpdate(encoding.GetBytes(data));
+        //     sm3.DoFinal(sm3Output, 0);
+        //     return encoding.GetString(Hex.Encode(sm3Output));
+        // }
         #endregion
 
         public static SymmetricAlgorithm CreateSymmetricAlgorithmFromName(string name) => CryptoConfig.CreateFromName(name) as SymmetricAlgorithm;
@@ -299,7 +296,7 @@ namespace AirMaster.Infrastructure.Security
         public static string AesEncrypt(string key, string text, byte[] iv = null, CipherMode mode = CipherMode.CBC, PaddingMode padding = PaddingMode.PKCS7, Encoding encoding = null)
         {
             if (string.IsNullOrEmpty(text)) { return null; }
-            return AesEncrypt((encoding ?? System.Text.Encoding.UTF8).GetBytes(key), (encoding ?? System.Text.Encoding.UTF8).GetBytes(text), iv, mode, padding);
+            return AesEncrypt((encoding ?? Encoding.UTF8).GetBytes(key), (encoding ?? Encoding.UTF8).GetBytes(text), iv, mode, padding);
         }
         /// <summary>
         /// RijndaelManaged
@@ -313,7 +310,7 @@ namespace AirMaster.Infrastructure.Security
         [Obsolete]
         public static string AesEncrypt(byte[] keyArray, byte[] textArray, byte[] iv = null, CipherMode mode = CipherMode.CBC, PaddingMode padding = PaddingMode.PKCS7)
         {
-            System.Security.Cryptography.RijndaelManaged rm = new System.Security.Cryptography.RijndaelManaged
+            RijndaelManaged rm = new RijndaelManaged
             {
                 Key = keyArray,
                 Mode = mode,
@@ -340,7 +337,7 @@ namespace AirMaster.Infrastructure.Security
         public static string AesDecrypt(string key, string text, byte[] iv = null, CipherMode mode = CipherMode.CBC, PaddingMode padding = PaddingMode.PKCS7, Encoding encoding = null)
         {
             if (string.IsNullOrEmpty(text)) { return null; }
-            return AesDecrypt((encoding ?? System.Text.Encoding.UTF8).GetBytes(key), Convert.FromBase64String(text), iv, mode, padding);
+            return AesDecrypt((encoding ?? Encoding.UTF8).GetBytes(key), Convert.FromBase64String(text), iv, mode, padding);
         }
         /// <summary>
         /// RijndaelManaged
@@ -354,7 +351,7 @@ namespace AirMaster.Infrastructure.Security
         [Obsolete]
         public static string AesDecrypt(byte[] keyArray, byte[] base64Array, byte[] iv = null, CipherMode mode = CipherMode.CBC, PaddingMode padding = PaddingMode.PKCS7, Encoding encoding = null)
         {
-            System.Security.Cryptography.RijndaelManaged rm = new System.Security.Cryptography.RijndaelManaged
+            RijndaelManaged rm = new RijndaelManaged
             {
                 Key = keyArray,
                 Mode = mode,

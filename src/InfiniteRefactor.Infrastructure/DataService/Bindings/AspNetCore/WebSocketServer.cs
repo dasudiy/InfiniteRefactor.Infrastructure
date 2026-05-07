@@ -3,9 +3,9 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
-using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Bindings.Stream.Infrastructure;
-using AirMaster.Infrastructure.DataService.Common.Processor;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Infrastructure;
+using InfiniteRefactor.Infrastructure.DataService.Common.Processor;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http.Features;
@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Server.Kestrel.Https;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.AspNetCore
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.AspNetCore
 {
     public class WebSocketServer : DataServiceServerBase
     {

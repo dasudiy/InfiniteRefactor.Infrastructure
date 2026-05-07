@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace AirMaster.Infrastructure.Net
+namespace InfiniteRefactor.Infrastructure.Net
 {
     public class HttpClientExHandler : HttpClientHandler
     {

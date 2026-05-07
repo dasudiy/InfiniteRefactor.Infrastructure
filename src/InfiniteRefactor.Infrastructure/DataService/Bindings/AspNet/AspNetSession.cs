@@ -1,14 +1,14 @@
-﻿using AirMaster.Infrastructure.Serializer;
-using AirMaster.Infrastructure.Session;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using InfiniteRefactor.Infrastructure.Serializer;
+using InfiniteRefactor.Infrastructure.Session;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.AspNet
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.AspNet
 {
     public class AspNetSession : ApplicationSession
     {

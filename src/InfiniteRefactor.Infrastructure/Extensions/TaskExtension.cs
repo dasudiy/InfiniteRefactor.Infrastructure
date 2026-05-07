@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace AirMaster.Infrastructure.Extensions
+namespace InfiniteRefactor.Infrastructure.Extensions
 {
     public static class TaskExtension
     {

@@ -1,16 +1,16 @@
-﻿using AirMaster.Infrastructure.DataService.Bindings.BatchQuery;
-using AirMaster.Infrastructure.DataService.Metadata;
-using AirMaster.Infrastructure.Serializer;
-using AirMaster.Infrastructure.Session;
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.BatchQuery;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
+using InfiniteRefactor.Infrastructure.Serializer;
+using InfiniteRefactor.Infrastructure.Session;
 using NLog;
 
-namespace AirMaster.Infrastructure.DataService.Abstractions
+namespace InfiniteRefactor.Infrastructure.DataService.Abstractions
 {
     public abstract class DataServiceContext : IDisposable
     {

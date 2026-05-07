@@ -1,12 +1,11 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Common.Processor;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Web;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Common.Processor;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.RabbitMQ
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.RabbitMQ
 {
     public class RabbitMQServer : DataServiceServerBase
     {

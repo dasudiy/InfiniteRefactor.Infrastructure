@@ -1,16 +1,15 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Abstractions.Processor;
-using AirMaster.Infrastructure.Serializer;
-using AirMaster.Infrastructure.Extensions;
-
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions.Processor;
+using InfiniteRefactor.Infrastructure.Extensions;
+using InfiniteRefactor.Infrastructure.Serializer;
 
-namespace AirMaster.Infrastructure.DataService.Common.Processor
+namespace InfiniteRefactor.Infrastructure.DataService.Common.Processor
 {
     public static class FilterExtension
     {

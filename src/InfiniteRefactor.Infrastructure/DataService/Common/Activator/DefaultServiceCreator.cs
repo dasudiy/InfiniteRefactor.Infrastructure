@@ -1,7 +1,7 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using System;
+﻿using System;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
 
-namespace AirMaster.Infrastructure.DataService.Common.Activator
+namespace InfiniteRefactor.Infrastructure.DataService.Common.Activator
 {
     public class DefaultServiceCreator : IServiceActivator
     {

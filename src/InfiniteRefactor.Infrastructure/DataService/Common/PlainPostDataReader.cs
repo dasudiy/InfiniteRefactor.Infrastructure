@@ -1,12 +1,12 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Metadata;
-using Microsoft.AspNetCore.Http;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
+using Microsoft.AspNetCore.Http;
 
-namespace AirMaster.Infrastructure.DataService.Common
+namespace InfiniteRefactor.Infrastructure.DataService.Common
 {
     public class PlainPostDataReader : IParameterValueReader
     {

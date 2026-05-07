@@ -1,12 +1,10 @@
-﻿using AirMaster.Infrastructure.DataService.Bindings.Stream.Infrastructure;
-using AirMaster.Infrastructure.Net;
-using System;
-using System.Linq;
-using System.Net;
+﻿using System;
 using System.Net.Sockets;
 using System.Security.Cryptography.X509Certificates;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Infrastructure;
+using InfiniteRefactor.Infrastructure.Net;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.Stream.Tcp
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Tcp
 {
     public class DataServiceTcpClient : StreamClient
     {

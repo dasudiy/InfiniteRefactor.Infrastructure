@@ -1,11 +1,11 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using System;
+﻿using System;
 using System.Collections.Specialized;
 using System.Net;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
 
 //using System.Web;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.BatchQuery
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.BatchQuery
 {
     public class BatchQueryRequest : DataServiceRequest
     {

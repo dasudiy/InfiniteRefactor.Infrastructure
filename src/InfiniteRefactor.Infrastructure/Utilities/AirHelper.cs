@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Text;
 using System.Text.RegularExpressions;
+using InfiniteRefactor.Infrastructure.Extensions;
 
-using AirMaster.Infrastructure.Extensions;
-
-namespace AirMaster.Infrastructure.Utilities
+namespace InfiniteRefactor.Infrastructure.Utilities
 {
     public static class AirHelper
     {

@@ -1,12 +1,12 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Metadata;
-using Snowflake;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
+using InfiniteRefactor.Infrastructure.Utilities.Snowflake;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.RabbitMQ
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.RabbitMQ
 {
     class RabbitMQClient : DataServiceClientBase, IDisposable
     {

@@ -6,13 +6,14 @@
  *
 
  */
+
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace AirMaster.Infrastructure.Serializer
+namespace InfiniteRefactor.Infrastructure.Serializer
 {
     /// <summary>
     /// a shortcut for SerializerFactory

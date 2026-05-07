@@ -5,21 +5,20 @@ using System.Net;
 using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
-using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Abstractions.Processor;
-using AirMaster.Infrastructure.DataService.Bindings.AspNet;
-using AirMaster.Infrastructure.DataService.Bindings.AspNet.EncryptionContext;
-using AirMaster.Infrastructure.DataService.Common.Processor;
-using AirMaster.Infrastructure.DataService.Metadata;
-using AirMaster.Infrastructure.Extensions;
-using AirMaster.Infrastructure.Serializer;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions.Processor;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.AspNet;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.AspNet.EncryptionContext;
+using InfiniteRefactor.Infrastructure.DataService.Common.Processor;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
+using InfiniteRefactor.Infrastructure.Extensions;
+using InfiniteRefactor.Infrastructure.Serializer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
-using Newtonsoft.Json.Linq;
 using NLog;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.AspNetCore
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.AspNetCore
 {
     public static class DataServiceMiddlewareExtensions
     {

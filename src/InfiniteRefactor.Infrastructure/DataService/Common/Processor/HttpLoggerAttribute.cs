@@ -1,12 +1,11 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Abstractions.Processor;
-using Microsoft.AspNetCore.Http;
-
-using System.IO;
+﻿using System.IO;
 using System.Text;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions.Processor;
+using Microsoft.AspNetCore.Http;
 using NLog;
 
-namespace AirMaster.Infrastructure.DataService.Common.Processor
+namespace InfiniteRefactor.Infrastructure.DataService.Common.Processor
 {
     public class HttpLoggerAttribute : PostProcessorAttribute
     {

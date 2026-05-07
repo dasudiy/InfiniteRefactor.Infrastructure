@@ -1,11 +1,11 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Abstractions.Processor;
-using Microsoft.Extensions.Caching.Memory;
-using System;
+﻿using System;
 using System.Net;
 using System.Threading.Tasks;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions.Processor;
+using Microsoft.Extensions.Caching.Memory;
 
-namespace AirMaster.Infrastructure.DataService.Common.Processor
+namespace InfiniteRefactor.Infrastructure.DataService.Common.Processor
 {
     public class Fail2BanAttribute : PostProcessorAttribute, IPreProcessor
     {

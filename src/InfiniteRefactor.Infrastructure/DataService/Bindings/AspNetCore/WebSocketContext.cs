@@ -1,13 +1,13 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Bindings.Stream.Infrastructure;
-using AirMaster.Infrastructure.DataService.Old.WebSocket;
-using AirMaster.Infrastructure.Session;
-using System;
+﻿using System;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Infrastructure;
+using InfiniteRefactor.Infrastructure.DataService.Old.WebSocket;
+using InfiniteRefactor.Infrastructure.Session;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.AspNetCore
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.AspNetCore
 {
     internal class WebSocketContext : DataServiceContext
     {

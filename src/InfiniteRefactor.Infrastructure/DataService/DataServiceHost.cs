@@ -1,20 +1,20 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Abstractions.Processor;
-using AirMaster.Infrastructure.DataService.Annotations;
-using AirMaster.Infrastructure.DataService.Common;
-using AirMaster.Infrastructure.DataService.Common.Activator;
-using AirMaster.Infrastructure.DataService.Metadata;
-using AirMaster.Infrastructure.Serializer;
-using AirMaster.Infrastructure.Utilities;
-using NLog;
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions.Processor;
+using InfiniteRefactor.Infrastructure.DataService.Annotations;
+using InfiniteRefactor.Infrastructure.DataService.Common;
+using InfiniteRefactor.Infrastructure.DataService.Common.Activator;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
+using InfiniteRefactor.Infrastructure.Serializer;
+using InfiniteRefactor.Infrastructure.Utilities;
+using NLog;
 
-namespace AirMaster.Infrastructure.DataService
+namespace InfiniteRefactor.Infrastructure.DataService
 {
     public sealed class DataServiceHost
     {

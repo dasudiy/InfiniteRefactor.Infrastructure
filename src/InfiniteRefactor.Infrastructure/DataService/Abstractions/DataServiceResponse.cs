@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace AirMaster.Infrastructure.DataService.Abstractions
+namespace InfiniteRefactor.Infrastructure.DataService.Abstractions
 {
     public abstract class DataServiceResponse : IDisposable
     {

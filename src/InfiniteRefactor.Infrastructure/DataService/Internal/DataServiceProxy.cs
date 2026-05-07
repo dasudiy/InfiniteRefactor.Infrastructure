@@ -167,20 +167,20 @@
 //}
 
 
-using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Annotations;
-using AirMaster.Infrastructure.DataService.Common.Processor;
-using AirMaster.Infrastructure.DataService.Metadata;
-using AirMaster.Infrastructure.Extensions;
-using Castle.DynamicProxy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using AirMaster.Infrastructure.Serializer;
+using Castle.DynamicProxy;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Annotations;
+using InfiniteRefactor.Infrastructure.DataService.Common.Processor;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
+using InfiniteRefactor.Infrastructure.Extensions;
+using InfiniteRefactor.Infrastructure.Serializer;
 
-namespace AirMaster.Infrastructure.DataService.Internal
+namespace InfiniteRefactor.Infrastructure.DataService.Internal
 {
     public class DataServiceProxy : IInterceptor
     {

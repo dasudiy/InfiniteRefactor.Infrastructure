@@ -1,9 +1,10 @@
 ﻿//using Newtonsoft.Json;
 //using Newtonsoft.Json.Converters;
+
 using System;
 using System.Collections.Generic;
 
-namespace AirMaster.Infrastructure.DataService.Metadata
+namespace InfiniteRefactor.Infrastructure.DataService.Metadata
 {
     internal static class SwaggerHelper
     {

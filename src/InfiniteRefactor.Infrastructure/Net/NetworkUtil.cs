@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Sockets;
 
-namespace AirMaster.Infrastructure.Net
+namespace InfiniteRefactor.Infrastructure.Net
 {
     public class NetworkUtil
     {

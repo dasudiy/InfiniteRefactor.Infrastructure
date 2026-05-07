@@ -4,10 +4,9 @@ using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Text;
+using InfiniteRefactor.Infrastructure.Extensions;
 
-using AirMaster.Infrastructure.Extensions;
-
-namespace AirMaster.Infrastructure.Net
+namespace InfiniteRefactor.Infrastructure.Net
 {
     public static class CookieHelper
     {

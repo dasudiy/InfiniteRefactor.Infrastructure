@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AirMaster.Infrastructure.DataService.Annotations
+namespace InfiniteRefactor.Infrastructure.DataService.Annotations
 {
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
     public class DataServiceMethodAttribute : Attribute

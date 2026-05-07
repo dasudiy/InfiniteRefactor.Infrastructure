@@ -1,11 +1,10 @@
-﻿using AirMaster.Infrastructure.Extensions;
-using System;
+﻿using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
+using InfiniteRefactor.Infrastructure.Extensions;
 
-namespace AirMaster.Infrastructure.Reflection
+namespace InfiniteRefactor.Infrastructure.Reflection
 {
     public static class EmitHelper
     {

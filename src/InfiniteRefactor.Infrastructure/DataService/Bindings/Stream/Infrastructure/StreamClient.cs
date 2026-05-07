@@ -1,15 +1,15 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Common.Processor;
-using AirMaster.Infrastructure.DataService.Internal;
-using AirMaster.Infrastructure.DataService.Metadata;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Common.Processor;
+using InfiniteRefactor.Infrastructure.DataService.Internal;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.Stream.Infrastructure
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Infrastructure
 {
     public abstract class StreamClient : DataServiceClientBase, IDisposable
     {

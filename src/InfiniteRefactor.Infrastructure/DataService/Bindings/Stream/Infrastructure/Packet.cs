@@ -1,8 +1,8 @@
-﻿using AirMaster.Infrastructure.Utilities;
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
+using InfiniteRefactor.Infrastructure.Utilities;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.Stream.Infrastructure
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Infrastructure
 {
     public class Packet : ICaculateLength, ICustomBinarySerializer
     {

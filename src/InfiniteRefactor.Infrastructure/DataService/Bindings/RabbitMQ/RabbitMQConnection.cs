@@ -1,23 +1,22 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Bindings.Stream.Infrastructure;
-using AirMaster.Infrastructure.DataService.Internal;
-using AirMaster.Infrastructure.DataService.Metadata;
-using AirMaster.Infrastructure.DataService.Old.WebSocket;
-using AirMaster.Infrastructure.Serializer;
-using AirMaster.Infrastructure.Extensions;
-using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Infrastructure;
+using InfiniteRefactor.Infrastructure.DataService.Internal;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
+using InfiniteRefactor.Infrastructure.DataService.Old.WebSocket;
+using InfiniteRefactor.Infrastructure.Extensions;
+using InfiniteRefactor.Infrastructure.Serializer;
 using Microsoft.Extensions.Caching.Memory;
-using System.Linq;
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.RabbitMQ
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.RabbitMQ
 {
     class RabbitMQConnection : DataServiceClientBase, IDisposable
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace AirMaster.Infrastructure.Serializer
+namespace InfiniteRefactor.Infrastructure.Serializer
 {
     [Obsolete(".NET6已废弃BinaryFormatter，请使用其它序列化方式")]
     public class BinarySerializer : StreamSerializer

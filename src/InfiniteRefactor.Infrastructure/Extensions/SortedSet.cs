@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AirMaster.Infrastructure.Extensions
+namespace InfiniteRefactor.Infrastructure.Extensions
 {
     public static class SortedSetExtension
     {

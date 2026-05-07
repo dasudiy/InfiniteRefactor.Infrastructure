@@ -1,11 +1,11 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Primitives;
-using System;
+﻿using System;
 using System.Linq;
 using System.Net;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Primitives;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.AspNet
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.AspNet
 {
     public class AspNetRequest : DataServiceRequest
     {

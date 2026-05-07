@@ -1,9 +1,9 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Metadata;
-using System;
+﻿using System;
 using System.Linq;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
 
-namespace AirMaster.Infrastructure.DataService.Common
+namespace InfiniteRefactor.Infrastructure.DataService.Common
 {
     public class DefaultServiceRouter : DataServiceRouter
     {

@@ -1,15 +1,14 @@
-﻿using AirMaster.Infrastructure.DataService.Bindings.Stream.Infrastructure;
-using AirMaster.Infrastructure.Extensions;
-
-using NLog;
-using System;
+﻿using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Infrastructure;
+using InfiniteRefactor.Infrastructure.Extensions;
+using NLog;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.Stream.Tcp
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Tcp
 {
     public class DataServiceTcpServer : StreamServer, IDisposable
     {

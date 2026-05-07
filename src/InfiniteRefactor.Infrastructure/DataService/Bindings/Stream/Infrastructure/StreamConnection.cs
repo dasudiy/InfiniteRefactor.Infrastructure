@@ -1,13 +1,5 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.DataService.Internal;
-using AirMaster.Infrastructure.DataService.Metadata;
-using AirMaster.Infrastructure.DataService.Old.WebSocket;
-using AirMaster.Infrastructure.Serializer;
-using AirMaster.Infrastructure.Utilities;
-using AirMaster.Infrastructure.Extensions;
-
-using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -15,9 +7,16 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Collections.Concurrent;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.DataService.Internal;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
+using InfiniteRefactor.Infrastructure.DataService.Old.WebSocket;
+using InfiniteRefactor.Infrastructure.Extensions;
+using InfiniteRefactor.Infrastructure.Serializer;
+using InfiniteRefactor.Infrastructure.Utilities;
+using Newtonsoft.Json.Linq;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.Stream.Infrastructure
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Infrastructure
 {
     internal class StreamConnection : DataServiceClientBase, IDisposable
     {

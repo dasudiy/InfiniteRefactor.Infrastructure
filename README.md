@@ -39,15 +39,18 @@ public class MyService
 // Host it
 var host = new DataServiceHost();
 host.AddService<MyService>();
-host.UseHttpBinding("http://localhost:5000/");
-await host.StartAsync();
+
+// Create and start the server
+var server = DataServiceServer.Create("http://0.0.0.0:5000/", host: host);
+server.Start();
 ```
 
 ### HTTP Client
 
 ```csharp
 var http = new Http();
-var result = await http.GetAsync<MyResponse>("https://api.example.com/data");
+var response = await http.GetAsync("https://api.example.com/data");
+var content = await response.Content.ReadAsStringAsync();
 ```
 
 ### Snowflake ID
@@ -63,4 +66,4 @@ long id = worker.NextId();
 
 ## License
 
-MIT
+Mozilla Public License 2.0

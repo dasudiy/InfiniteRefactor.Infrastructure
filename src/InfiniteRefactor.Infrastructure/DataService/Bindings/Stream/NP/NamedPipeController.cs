@@ -1,9 +1,9 @@
-﻿using AirMaster.Infrastructure.DataService.Bindings.Stream.Infrastructure;
-using System;
+﻿using System;
 using System.IO.Pipes;
 using System.Net;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Infrastructure;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.Stream.NP
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.NP
 {
     public class NamedPipeController : IConnectionController
     {

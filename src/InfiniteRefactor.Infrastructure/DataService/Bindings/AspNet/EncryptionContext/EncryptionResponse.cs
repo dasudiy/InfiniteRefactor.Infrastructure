@@ -1,14 +1,14 @@
-﻿using AirMaster.Infrastructure.DataService.Abstractions;
-using AirMaster.Infrastructure.Security;
-using Microsoft.AspNetCore.Http;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using InfiniteRefactor.Infrastructure.DataService.Abstractions;
+using InfiniteRefactor.Infrastructure.Security;
+using Microsoft.AspNetCore.Http;
 
-namespace AirMaster.Infrastructure.DataService.Bindings.AspNet.EncryptionContext
+namespace InfiniteRefactor.Infrastructure.DataService.Bindings.AspNet.EncryptionContext
 {
     public class EncryptionResponse : DataServiceResponse
     {

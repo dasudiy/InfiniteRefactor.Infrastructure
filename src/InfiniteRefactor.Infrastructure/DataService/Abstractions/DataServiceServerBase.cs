@@ -1,9 +1,7 @@
-﻿using AirMaster.Infrastructure.Utilities;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Security.Cryptography.X509Certificates;
 
-namespace AirMaster.Infrastructure.DataService.Abstractions
+namespace InfiniteRefactor.Infrastructure.DataService.Abstractions
 {
     public abstract class DataServiceServerBase : IDisposable
     {

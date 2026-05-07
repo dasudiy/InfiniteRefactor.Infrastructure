@@ -2,7 +2,7 @@
 using System.Net.Sockets;
 using System.Text;
 
-namespace AirMaster.Infrastructure.Net
+namespace InfiniteRefactor.Infrastructure.Net
 {
     public static class ProxiedTcpClient
     {

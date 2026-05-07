@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace AirMaster.Infrastructure.DataService
+namespace InfiniteRefactor.Infrastructure.DataService
 {
     public class DataServiceException : Exception
     {

@@ -10,6 +10,8 @@ using System.IO;
 using System.Reflection;
 
 // See the ReadMe.html for additional information
+namespace InfiniteRefactor.Infrastructure.Utilities;
+
 public class ObjectDumper
 {
     public static void Write(object element)

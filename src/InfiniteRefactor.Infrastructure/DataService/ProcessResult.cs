@@ -1,4 +1,4 @@
-﻿namespace AirMaster.Infrastructure.DataService
+﻿namespace InfiniteRefactor.Infrastructure.DataService
 {
     public class ProcessResult
     {

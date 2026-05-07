@@ -1,14 +1,14 @@
-﻿namespace AirMaster.Infrastructure.Security
-{
-    using System;
-    using System.IO;
-    using System.Linq;
-    using System.Numerics;
-    using System.Runtime.Versioning;
-    using System.Security.Cryptography;
-    using System.Text;
-    using System.Text.RegularExpressions;
+﻿using System;
+using System.IO;
+using System.Linq;
+using System.Numerics;
+using System.Runtime.Versioning;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.RegularExpressions;
 
+namespace InfiniteRefactor.Infrastructure.Security
+{
     /// <summary>
     /// RSA PEM格式密钥对的解析和导出
     /// GitHub: https://github.com/xiangyuecn/RSA-csharp

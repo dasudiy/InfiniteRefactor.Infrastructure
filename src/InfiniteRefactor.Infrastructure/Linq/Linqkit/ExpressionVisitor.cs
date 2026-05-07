@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq.Expressions;
 
-namespace AirMaster.Infrastructure.Linq.Linqkit
+namespace InfiniteRefactor.Infrastructure.Linq.Linqkit
 {
     /// <summary>
     /// This comes from Matt Warren's sample:

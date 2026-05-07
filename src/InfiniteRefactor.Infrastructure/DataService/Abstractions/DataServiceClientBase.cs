@@ -1,23 +1,19 @@
-﻿using AirMaster.Infrastructure.DataService.Bindings.AspNetCore;
-using AirMaster.Infrastructure.DataService.Bindings.Http;
-using AirMaster.Infrastructure.DataService.Bindings.RabbitMQ;
-using AirMaster.Infrastructure.DataService.Bindings.Stream.NP;
-using AirMaster.Infrastructure.DataService.Bindings.Stream.Tcp;
-using AirMaster.Infrastructure.DataService.Internal;
-using AirMaster.Infrastructure.DataService.Metadata;
-using AirMaster.Infrastructure.DataService.Old.WebSocket;
-using AirMaster.Infrastructure.Net;
-using AirMaster.Infrastructure.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using AirMaster.Infrastructure.Extensions;
-using AirMaster.Infrastructure.Serializer;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.AspNetCore;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.Http;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.RabbitMQ;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.NP;
+using InfiniteRefactor.Infrastructure.DataService.Bindings.Stream.Tcp;
+using InfiniteRefactor.Infrastructure.DataService.Internal;
+using InfiniteRefactor.Infrastructure.DataService.Metadata;
+using InfiniteRefactor.Infrastructure.Net;
 
-namespace AirMaster.Infrastructure.DataService.Abstractions
+namespace InfiniteRefactor.Infrastructure.DataService.Abstractions
 {
     public abstract class DataServiceClientBase
     {

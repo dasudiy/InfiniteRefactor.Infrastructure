@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace AirMaster.Infrastructure.Linq.Linqkit
+namespace InfiniteRefactor.Infrastructure.Linq.Linqkit
 {
     /// <summary>Refer to http://www.albahari.com/nutshell/LinqKit.html and
     /// http://tomasp.net/blog/linq-expand.aspx for more information.</summary>

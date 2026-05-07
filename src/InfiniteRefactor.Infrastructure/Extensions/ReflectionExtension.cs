@@ -1,14 +1,13 @@
-﻿using AirMaster.Infrastructure.Extensions;
-using AirMaster.Infrastructure.Reflection;
-using AirMaster.Infrastructure.Utilities;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using InfiniteRefactor.Infrastructure.Reflection;
+using InfiniteRefactor.Infrastructure.Utilities;
 
-namespace AirMaster.Infrastructure.Extensions
+namespace InfiniteRefactor.Infrastructure.Extensions
 {
     public static class ReflectionExtension
     {

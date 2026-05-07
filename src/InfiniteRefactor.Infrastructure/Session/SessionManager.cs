@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 
-namespace AirMaster.Infrastructure.Session
+namespace InfiniteRefactor.Infrastructure.Session
 {
     public class SessionManager
     {
