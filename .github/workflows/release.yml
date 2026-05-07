@@ -1,0 +1,52 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to create GitHub Release
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Strip leading "v" from tag → semver (e.g. v1.2.3 → 1.2.3)
+      - name: Extract version
+        id: ver
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.x"
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore -c Release -p:Version=${{ steps.ver.outputs.VERSION }}
+
+      - name: Pack
+        run: |
+          dotnet pack src/InfiniteRefactor.Infrastructure/InfiniteRefactor.Infrastructure.csproj \
+            --no-build -c Release \
+            -o ./nupkgs \
+            -p:Version=${{ steps.ver.outputs.VERSION }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ./nupkgs/*.nupkg
+          generate_release_notes: true   # auto-generates changelog from commits
+
+      - name: Push to NuGet
+        run: |
+          dotnet nuget push ./nupkgs/*.nupkg \
+            --api-key ${{ secrets.NUGET_API_KEY }} \
+            --source https://api.nuget.org/v3/index.json \
+            --skip-duplicate
