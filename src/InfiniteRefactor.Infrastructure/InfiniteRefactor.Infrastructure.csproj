@@ -13,8 +13,8 @@
         <Description>Shared infrastructure library — core utilities, DataService bindings, caching, messaging, and more.</Description>
         <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
         <PackageTags>infrastructure;dataservice;rpc;middleware;rabbitmq;websocket;serialization;utilities;dotnet8</PackageTags>
-        <PackageProjectUrl>https://github.com/InfiniteRefactor/InfiniteRefactor.Infrastructure</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/InfiniteRefactor/InfiniteRefactor.Infrastructure</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/dasudiy/InfiniteRefactor.Infrastructure</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/dasudiy/InfiniteRefactor.Infrastructure</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <PackageReadmeFile>README.md</PackageReadmeFile>
