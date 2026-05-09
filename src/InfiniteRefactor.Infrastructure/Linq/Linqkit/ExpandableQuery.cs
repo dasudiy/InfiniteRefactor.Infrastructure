@@ -1,4 +1,9 @@
-﻿using System;
+﻿// LinqKit by Joseph Albahari and Tomas Petricek
+// http://www.albahari.com/nutshell/linqkit.html
+// Licensed under the MIT License
+// https://github.com/scottksmith95/LINQKit
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;

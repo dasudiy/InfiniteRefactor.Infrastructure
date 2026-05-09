@@ -1,11 +1,6 @@
-﻿/** Copyright 2010-2012 Twitter, Inc.*/
-
-/**
- * An object that generates IDs.
- * This is broken into a separate class in case
- * we ever want to support multiple worker threads
- * per process
- */
+﻿// Copyright 2010-2012 Twitter, Inc.
+// Licensed under the Apache License, Version 2.0
+// Ported from Twitter Snowflake: https://github.com/twitter-archive/snowflake
 
 using System;
 

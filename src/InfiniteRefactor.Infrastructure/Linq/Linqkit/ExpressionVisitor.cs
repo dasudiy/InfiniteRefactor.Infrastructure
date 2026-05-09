@@ -1,4 +1,12 @@
-﻿using System;
+﻿// LinqKit by Joseph Albahari and Tomas Petricek
+// http://www.albahari.com/nutshell/linqkit.html
+// Licensed under the MIT License
+// https://github.com/scottksmith95/LINQKit
+//
+// ExpressionVisitor based on Matt Warren's sample:
+// http://blogs.msdn.com/mattwar/archive/2007/07/31/linq-building-an-iqueryable-provider-part-ii.aspx
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq.Expressions;

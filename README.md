@@ -64,6 +64,13 @@ long id = worker.NextId();
 
 - .NET 8.0+
 
+## Third-Party Credits
+
+- **[Twitter Snowflake](https://github.com/twitter-archive/snowflake)** — Distributed ID generation algorithm by Twitter, Inc. Licensed under Apache 2.0.
+- **[LinqKit](https://github.com/scottksmith95/LINQKit)** — LINQ expression utilities by [Joseph Albahari](http://www.albahari.com) and [Tomas Petricek](http://tomasp.net). Licensed under MIT.
+- **[Microsoft Dynamic LINQ](https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ef/language-reference/linq-to-entities)** — Dynamic query support from Microsoft. Licensed under Ms-PL.
+- **[ObjectDumper](https://github.com/microsoft/LinqSamples)** — Object graph dump utility from Microsoft LINQ samples. Licensed under Ms-PL.
+
 ## License
 
 Mozilla Public License 2.0

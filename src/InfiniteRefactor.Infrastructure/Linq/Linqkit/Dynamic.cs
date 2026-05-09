@@ -1,4 +1,9 @@
-﻿using System;
+﻿// Copyright (C) Microsoft Corporation. All Rights Reserved.
+// Licensed under the Microsoft Public License (Ms-PL)
+// http://opensource.org/licenses/ms-pl.html
+// Microsoft Dynamic LINQ library
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
