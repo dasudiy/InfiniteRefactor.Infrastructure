@@ -9,6 +9,7 @@ using InfiniteRefactor.Infrastructure.DataService.Abstractions.Processor;
 using InfiniteRefactor.Infrastructure.DataService.Annotations;
 using InfiniteRefactor.Infrastructure.DataService.Common;
 using InfiniteRefactor.Infrastructure.DataService.Common.Activator;
+using InfiniteRefactor.Infrastructure.DataService.Internal;
 using InfiniteRefactor.Infrastructure.DataService.Metadata;
 using InfiniteRefactor.Infrastructure.Serializer;
 using InfiniteRefactor.Infrastructure.Utilities;
@@ -220,7 +221,7 @@ namespace InfiniteRefactor.Infrastructure.DataService
                             }
                             catch (Exception ex)
                             {
-                                Log.Error(ex, $"调用{info}失败");
+                                Log.Error(ex, $"调用{LogSanitizer.Sanitize(info.ToString())}失败");
                                 return ex.Message;
                             }
                             finally
@@ -302,7 +303,7 @@ namespace InfiniteRefactor.Infrastructure.DataService
                             }
                             catch (Exception ex)
                             {
-                                Log.Error(ex, $"调用{info}失败");
+                                Log.Error(ex, $"调用{LogSanitizer.Sanitize(info.ToString())}失败");
                                 return ex.Message;
                             }
                             finally

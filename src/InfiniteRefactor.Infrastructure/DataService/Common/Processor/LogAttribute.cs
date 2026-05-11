@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using InfiniteRefactor.Infrastructure.DataService.Abstractions;
 using InfiniteRefactor.Infrastructure.DataService.Abstractions.Processor;
+using InfiniteRefactor.Infrastructure.DataService.Internal;
 using InfiniteRefactor.Infrastructure.Serializer;
 
 namespace InfiniteRefactor.Infrastructure.DataService.Common.Processor
@@ -61,7 +62,7 @@ namespace InfiniteRefactor.Infrastructure.DataService.Common.Processor
             //var logger = LogManager.GetLogger(context.ServiceInstance.GetType().FullName);
             var parameter = LogParameters.Select(p => new { Key = p, Value = context.Request.ReadParameter<string>(p, null) })
                 .ToDictionary(k => k.Key, v => v.Value);
-            var paramstr = SerializerFactory.Serialize("json", parameter);
+            var paramstr = LogSanitizer.Sanitize(SerializerFactory.Serialize("json", parameter));
 
             if (Template == null)
             {
@@ -83,8 +84,8 @@ namespace InfiniteRefactor.Infrastructure.DataService.Common.Processor
             //var logger = LogManager.GetLogger(context.ServiceInstance.GetType().FullName);
             var parameter = LogParameters.Select(p => new { Key = p, Value = context.Request.ReadParameter<string>(p, null) })
                 .ToDictionary(k => k.Key, v => v.Value);
-            var paramstr = SerializerFactory.Serialize("json", parameter);
-            var result = LogResult ? SerializerFactory.Serialize("json", (response.Result ?? "null")) : "NOT LOG";
+            var paramstr = LogSanitizer.Sanitize(SerializerFactory.Serialize("json", parameter));
+            var result = LogSanitizer.Sanitize(LogResult ? SerializerFactory.Serialize("json", (response.Result ?? "null")) : "NOT LOG");
 
             if (Template == null)
             {

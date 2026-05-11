@@ -2,6 +2,7 @@
 using System.Text;
 using InfiniteRefactor.Infrastructure.DataService.Abstractions;
 using InfiniteRefactor.Infrastructure.DataService.Abstractions.Processor;
+using InfiniteRefactor.Infrastructure.DataService.Internal;
 using Microsoft.AspNetCore.Http;
 using NLog;
 
@@ -41,13 +42,14 @@ Response Info:
                 (response.RawResponseObject as HttpResponse).StatusCode,
                 ExtractHeaders((response.RawResponseObject as HttpResponse).Headers),
                 (response.Result != null ? request.Context.Serializer.Serialize(response.Result) : string.Empty));
+            var sanitizedResult = LogSanitizer.Sanitize(result);
             if (Trace)
             {
-                log.Trace(result);
+                log.Trace(sanitizedResult);
             }
             else
             {
-                log.Info(result);
+                log.Info(sanitizedResult);
             }
             return ProcessResult.Default;
         }
