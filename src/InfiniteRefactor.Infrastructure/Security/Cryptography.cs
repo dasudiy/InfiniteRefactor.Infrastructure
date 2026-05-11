@@ -236,50 +236,18 @@ namespace InfiniteRefactor.Infrastructure.Security
             return new CryptoStream(baseStream, mode == CryptoStreamMode.Write ? alg.CreateEncryptor(key, vi) : alg.CreateDecryptor(key, vi), mode);
         }
 
-        [Obsolete]
+        [Obsolete("TripleDES is insecure. Use AES-based Encrypt/Decrypt methods instead.")]
         [SupportedOSPlatform("windows")]
         public static string TripleDESEncrypt(string publicKey, string strSource)
         {
-            using (var desc = new TripleDESCryptoServiceProvider())
-            {
-                var db = new PasswordDeriveBytes(publicKey, null); // key            
-
-                desc.Key = db.CryptDeriveKey("TripleDES", "SHA1", 192, desc.IV);
-                byte[] key = desc.Key;
-                using (var ms = new MemoryStream())
-                {
-                    //以流方式存储数据            
-                    var cs = new CryptoStream(ms, desc.CreateEncryptor(key, key), CryptoStreamMode.Write);
-                    byte[] data = Encoding.UTF8.GetBytes(strSource); //取到密码的字节流
-                    cs.Write(data, 0, data.Length);
-                    cs.FlushFinalBlock();
-                    byte[] res = ms.ToArray();
-                    return Convert.ToBase64String(res); //加密后的数据
-                }
-            }
+            throw new NotSupportedException("TripleDES is disabled due to security risks. Use the AES-based Encrypt/Decrypt methods instead.");
         }
 
-        [Obsolete]
+        [Obsolete("TripleDES is insecure. Use AES-based Encrypt/Decrypt methods instead.")]
         [SupportedOSPlatform("windows")]
         public static string TripleDESDecrypt(string publicKey, string data)
         {
-            using (var desc = new TripleDESCryptoServiceProvider())
-            {
-                var db = new PasswordDeriveBytes(publicKey, null);
-                desc.Key = db.CryptDeriveKey("TripleDES", "SHA1", 192, desc.IV);
-                byte[] key = desc.Key;
-
-                using (var ms = new MemoryStream())
-                {
-                    var cs = new CryptoStream(ms, desc.CreateDecryptor(key, key), CryptoStreamMode.Write);
-                    byte[] inputByteArray = Convert.FromBase64String(data);
-
-                    cs.Write(inputByteArray, 0, inputByteArray.Length); //解密          
-                    cs.FlushFinalBlock();
-                    Encoding encoding = Encoding.UTF8;
-                    return encoding.GetString(ms.ToArray());
-                }
-            }
+            throw new NotSupportedException("TripleDES is disabled due to security risks. Use the AES-based Encrypt/Decrypt methods instead.");
         }
 
         #region RijndaelManaged
@@ -364,6 +332,76 @@ namespace InfiniteRefactor.Infrastructure.Security
 
             return (encoding ?? Encoding.UTF8).GetString(resultArray);
         }
+        #endregion
+
+        #region RSA (OAEP-SHA256)
+
+        private static System.Security.Cryptography.RSA LoadRSA(string pemOrXml)
+        {
+            var rsa = System.Security.Cryptography.RSA.Create();
+            if (pemOrXml.TrimStart().StartsWith("<"))
+                rsa.FromXmlString(pemOrXml);
+            else
+                rsa.ImportFromPem(pemOrXml);
+            return rsa;
+        }
+
+        public static byte[] RSAEncrypt(string pemOrXml, byte[] data)
+        {
+            using var rsa = LoadRSA(pemOrXml);
+            int blockSize = rsa.KeySize / 8 - 42; // OAEP-SHA256 overhead
+            if (data.Length <= blockSize)
+                return rsa.Encrypt(data, RSAEncryptionPadding.OaepSHA256);
+
+            using var output = new MemoryStream();
+            int offset = 0;
+            while (offset < data.Length)
+            {
+                int len = Math.Min(blockSize, data.Length - offset);
+                var block = rsa.Encrypt(data[offset..(offset + len)], RSAEncryptionPadding.OaepSHA256);
+                output.Write(block, 0, block.Length);
+                offset += len;
+            }
+            return output.ToArray();
+        }
+
+        public static string RSAEncrypt(string pemOrXml, string text)
+            => Convert.ToBase64String(RSAEncrypt(pemOrXml, Encoding.UTF8.GetBytes(text)));
+
+        public static byte[] RSADecrypt(string pemOrXml, byte[] data)
+        {
+            using var rsa = LoadRSA(pemOrXml);
+            int blockSize = rsa.KeySize / 8;
+            if (data.Length <= blockSize)
+                return rsa.Decrypt(data, RSAEncryptionPadding.OaepSHA256);
+
+            using var output = new MemoryStream();
+            int offset = 0;
+            while (offset < data.Length)
+            {
+                int len = Math.Min(blockSize, data.Length - offset);
+                var block = rsa.Decrypt(data[offset..(offset + len)], RSAEncryptionPadding.OaepSHA256);
+                output.Write(block, 0, block.Length);
+                offset += len;
+            }
+            return output.ToArray();
+        }
+
+        public static string RSADecrypt(string pemOrXml, string base64)
+            => Encoding.UTF8.GetString(RSADecrypt(pemOrXml, Convert.FromBase64String(base64)));
+
+        public static byte[] RSASign(string pemOrXml, string hash, byte[] data)
+        {
+            using var rsa = LoadRSA(pemOrXml);
+            return rsa.SignData(data, new HashAlgorithmName(hash.ToUpperInvariant()), RSASignaturePadding.Pkcs1);
+        }
+
+        public static bool RSAVerify(string pemOrXml, string hash, byte[] data, byte[] signature)
+        {
+            using var rsa = LoadRSA(pemOrXml);
+            return rsa.VerifyData(data, signature, new HashAlgorithmName(hash.ToUpperInvariant()), RSASignaturePadding.Pkcs1);
+        }
+
         #endregion
     }
 }

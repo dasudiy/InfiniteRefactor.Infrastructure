@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using InfiniteRefactor.Infrastructure.DataService.Abstractions;
 using InfiniteRefactor.Infrastructure.DataService.Abstractions.Processor;
 using InfiniteRefactor.Infrastructure.DataService.Annotations;
+using InfiniteRefactor.Infrastructure.DataService.Internal;
 using InfiniteRefactor.Infrastructure.Serializer;
 
 namespace InfiniteRefactor.Infrastructure.DataService.Metadata
@@ -89,13 +90,13 @@ namespace InfiniteRefactor.Infrastructure.DataService.Metadata
                     }
                     catch (TargetInvocationException ex)
                     {
-                        DataServiceHost.Log.Error(ex.InnerException, $"调用{context.RouteInfo.ToString()}失败{ex.InnerException.Message},参数:{SerializerFactory.Serialize("json", param)}");
+                        DataServiceHost.Log.Error(ex.InnerException, $"调用{LogSanitizer.Sanitize(context.RouteInfo.ToString())}失败{LogSanitizer.Sanitize(ex.InnerException.Message)},参数:{LogSanitizer.Sanitize(SerializerFactory.Serialize("json", param))}");
                         context.Response.Exception = ex.InnerException;
                     }
                 }
                 catch (Exception ex)
                 {
-                    DataServiceHost.Log.Error(ex, $"调用{context.RouteInfo.ToString()}失败{ex.Message}");
+                    DataServiceHost.Log.Error(ex, $"调用{LogSanitizer.Sanitize(context.RouteInfo.ToString())}失败{LogSanitizer.Sanitize(ex.Message)}");
                     context.Response.Exception = ex;
                 }
             }
@@ -136,13 +137,13 @@ namespace InfiniteRefactor.Infrastructure.DataService.Metadata
                     }
                     catch (TargetInvocationException ex)
                     {
-                        DataServiceHost.Log.Error(ex.InnerException, $"调用{context.RouteInfo.ToString()}失败{ex.InnerException.Message},参数:{SerializerFactory.Serialize("json", param)}");
+                        DataServiceHost.Log.Error(ex.InnerException, $"调用{LogSanitizer.Sanitize(context.RouteInfo.ToString())}失败{LogSanitizer.Sanitize(ex.InnerException.Message)},参数:{LogSanitizer.Sanitize(SerializerFactory.Serialize("json", param))}");
                         context.Response.Exception = ex.InnerException;
                     }
                 }
                 catch (Exception ex)
                 {
-                    DataServiceHost.Log.Error(ex, $"调用{context.RouteInfo.ToString()}失败{ex.Message}");
+                    DataServiceHost.Log.Error(ex, $"调用{LogSanitizer.Sanitize(context.RouteInfo.ToString())}失败{LogSanitizer.Sanitize(ex.Message)}");
                     context.Response.Exception = ex;
                 }
             }

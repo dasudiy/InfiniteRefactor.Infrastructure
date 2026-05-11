@@ -32,8 +32,7 @@ namespace InfiniteRefactor.Infrastructure.Serializer
 
         public override object Deserialize(System.IO.Stream stream, Type type)
         {
-            var ser = new BinaryFormatter();
-            return ser.Deserialize(stream);
+            throw new NotSupportedException("BinaryFormatter deserialization is disabled due to security risks. Use a safe serializer such as JSON or XML instead.");
         }
     }
 }
