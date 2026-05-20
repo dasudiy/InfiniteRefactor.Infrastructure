@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
@@ -170,10 +171,7 @@ namespace InfiniteRefactor.Infrastructure.Extensions
                     else if (obj is JsonDocument)
                     {
                         JsonDocument o = (JsonDocument)obj;
-                        value = o.Deserialize(targetType, new JsonSerializerOptions
-                        {
-                            NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString
-                        });
+                        value = o.Deserialize(targetType, SystemJsonSerializer.Instance.Options);
                     }
                     else if (obj is JsonElement)
                     {
@@ -652,10 +650,30 @@ namespace InfiniteRefactor.Infrastructure.Extensions
 
         public static IEnumerable<IEnumerable<T>> Partition<T>(this IEnumerable<T> col, int size)
         {
-            List<IEnumerable<T>> result = new List<IEnumerable<T>>();
-            for (int i = 0; i < Math.Ceiling(col.Count().To<double>() / size.To<double>()); i++)
+            if (col == null) throw new ArgumentNullException(nameof(col));
+            if (size <= 0) throw new ArgumentOutOfRangeException(nameof(size));
+
+            if (col is IList<T> list)
             {
-                yield return col.Skip(i * size).Take(size);
+                for (int i = 0; i < list.Count; i += size)
+                {
+                    yield return list.Skip(i).Take(Math.Min(size, list.Count - i));
+                }
+            }
+            else
+            {
+                List<T> buffer = new List<T>(size);
+                foreach (var item in col)
+                {
+                    buffer.Add(item);
+                    if (buffer.Count == size)
+                    {
+                        yield return buffer.ToArray();
+                        buffer.Clear();
+                    }
+                }
+                if (buffer.Count > 0)
+                    yield return buffer.ToArray();
             }
         }
 

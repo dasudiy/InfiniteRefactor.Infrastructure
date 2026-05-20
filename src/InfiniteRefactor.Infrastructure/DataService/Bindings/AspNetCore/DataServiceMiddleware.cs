@@ -92,6 +92,7 @@ namespace InfiniteRefactor.Infrastructure.DataService.Bindings.AspNetCore
                     DataServiceContext dsContext = context.Request.Headers.ContainsKey("APPID")
                         ? new EncryptionHttpContext(context)
                         : new AspNetDataServiceContext(context);
+                    host.OnBeforeReceiveMessage(dsContext);
                     await host.ProcessContextAsync(dsContext);
                 }
                 else
