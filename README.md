@@ -1,3 +1,5 @@
+![InfiniteRefactor.Infrastructure](docs/images/readme-banner.png)
+
 # InfiniteRefactor.Infrastructure
 
 A .NET 8 infrastructure library providing a comprehensive set of utilities, extensions, and a lightweight DataService framework for building scalable backend services.
