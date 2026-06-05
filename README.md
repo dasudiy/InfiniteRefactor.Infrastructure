@@ -23,6 +23,16 @@ dotnet add package InfiniteRefactor.Infrastructure
 
 > NuGet package coming soon. For now, reference the project directly.
 
+## Examples
+
+Runnable DataService samples live under [`examples/`](examples/). Open `examples/InfiniteRefactor.Infrastructure.Examples.sln` or run an individual project, for example:
+
+```bash
+dotnet run --project examples/01_BasicHttpHostAndClient/01_BasicHttpHostAndClient.csproj
+```
+
+See [examples/README.md](examples/README.md) for the full list.
+
 ## Quick Start
 
 ### DataService (HTTP)
