@@ -65,46 +65,55 @@ namespace InfiniteRefactor.Infrastructure.DataService.Bindings.AspNetCore
 
         public async Task InvokeAsync(HttpContext context)
         {
-            if (context.Request.Path.StartsWithSegments(option.WebSocketPath.HasValue
-                    ? option.WebSocketPath
-                    : option.RequestPath))
-            {
-                if (context.WebSockets.IsWebSocketRequest)
-                {
-                    var ws = await context.WebSockets.AcceptWebSocketAsync();
-                    var addr = context.Connection.RemoteIpAddress;
-                    var port = context.Connection.RemotePort;
+            var requestPath = option.RequestPath;
+            var webSocketPath = option.WebSocketPath.HasValue ? option.WebSocketPath : requestPath;
+            var isWebSocketPath = webSocketPath.HasValue &&
+                                  context.Request.Path.StartsWithSegments(webSocketPath);
+            var isRequestPath = requestPath.HasValue &&
+                                context.Request.Path.StartsWithSegments(requestPath);
 
-                    var tcs = new TaskCompletionSource<object>();
-                    var connection =
-                        new WebSocketConnection(host, ws, new IPEndPoint(addr, port), option.WebsocketTimeout);
-                    this.host.NewConnection(connection);
-                    connection.ConnectionClosed += (sender, _) =>
-                    {
-                        tcs.SetResult(true);
-                        connection.Dispose();
-                        this.host.ConnectionClosed(connection);
-                    };
-                    await tcs.Task;
-                }
-                else if (context.Request.Path.StartsWithSegments(option.RequestPath))
-                {
-                    DataServiceContext dsContext = context.Request.Headers.ContainsKey("APPID")
-                        ? new EncryptionHttpContext(context)
-                        : new AspNetDataServiceContext(context);
-                    host.OnBeforeReceiveMessage(dsContext);
-                    await host.ProcessContextAsync(dsContext);
-                }
-                else
-                {
-                    context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                }
-            }
-            else
+            if (!isWebSocketPath && !isRequestPath)
             {
-                // Call the next delegate/middleware in the pipeline
                 await next(context);
+                return;
             }
+
+            if (isWebSocketPath && context.WebSockets.IsWebSocketRequest)
+            {
+                await AcceptWebSocketAsync(context);
+                return;
+            }
+
+            if (isRequestPath)
+            {
+                DataServiceContext dsContext = context.Request.Headers.ContainsKey("APPID")
+                    ? new EncryptionHttpContext(context)
+                    : new AspNetDataServiceContext(context);
+                host.OnBeforeReceiveMessage(dsContext);
+                await host.ProcessContextAsync(dsContext);
+                return;
+            }
+
+            context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+        }
+
+        private async Task AcceptWebSocketAsync(HttpContext context)
+        {
+            var ws = await context.WebSockets.AcceptWebSocketAsync();
+            var addr = context.Connection.RemoteIpAddress;
+            var port = context.Connection.RemotePort;
+
+            var tcs = new TaskCompletionSource<object>();
+            var connection =
+                new WebSocketConnection(host, ws, new IPEndPoint(addr, port), option.WebsocketTimeout);
+            this.host.NewConnection(connection);
+            connection.ConnectionClosed += (sender, _) =>
+            {
+                tcs.SetResult(true);
+                connection.Dispose();
+                this.host.ConnectionClosed(connection);
+            };
+            await tcs.Task;
         }
     }
 
