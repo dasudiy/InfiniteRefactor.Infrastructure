@@ -384,35 +384,39 @@ namespace InfiniteRefactor.Infrastructure.DataService.Bindings.AspNetCore
                         // Cancellation token was signaled, exit gracefully
                         break;
                     }
-                    catch (Exception ex)
-                    {
-                        Log.Error(ex, "Error in WebSocket ReadThread.");
-                        Try.Todo(() => ConnectionClosed?.Invoke(this, EventArgs.Empty));
-
-                        if (!IsServerWebSocket)
+                        catch (Exception ex)
                         {
-                            TriggerAutoReconnect();
-                            // Wait a bit before trying to read again
-                            try
+                            Log.Error(ex, "Error in WebSocket ReadThread.");
+                            if (!IsServerWebSocket)
                             {
-                                await Task.Delay(1000, source.Token);
+                                Try.Todo(() => ConnectionClosed?.Invoke(this, EventArgs.Empty));
+                                TriggerAutoReconnect();
+                                try
+                                {
+                                    await Task.Delay(1000, source.Token);
+                                }
+                                catch (OperationCanceledException)
+                                {
+                                    break;
+                                }
                             }
-                            catch (OperationCanceledException)
+                            else
                             {
                                 break;
                             }
                         }
-                        else
-                        {
-                            // Server WebSocket error, exit
-                            break;
-                        }
-                    }
                 }
             }
             catch (Exception ex)
             {
                 Log.Error(ex, "Unexpected error in WebSocket ReadThread.");
+            }
+            finally
+            {
+                if (IsServerWebSocket)
+                {
+                    Try.Todo(() => ConnectionClosed?.Invoke(this, EventArgs.Empty));
+                }
             }
         }
 

@@ -103,17 +103,21 @@ namespace InfiniteRefactor.Infrastructure.DataService.Bindings.AspNetCore
             var addr = context.Connection.RemoteIpAddress;
             var port = context.Connection.RemotePort;
 
-            var tcs = new TaskCompletionSource<object>();
+            var tcs = new TaskCompletionSource<object>(TaskCreationOptions.RunContinuationsAsynchronously);
             var connection =
                 new WebSocketConnection(host, ws, new IPEndPoint(addr, port), option.WebsocketTimeout);
             this.host.NewConnection(connection);
-            connection.ConnectionClosed += (sender, _) =>
+            connection.ConnectionClosed += (_, _) => tcs.TrySetResult(true);
+            await using var abortReg = context.RequestAborted.Register(() => tcs.TrySetResult(true));
+            try
             {
-                tcs.SetResult(true);
-                connection.Dispose();
+                await tcs.Task;
+            }
+            finally
+            {
                 this.host.ConnectionClosed(connection);
-            };
-            await tcs.Task;
+                connection.Dispose();
+            }
         }
     }
 

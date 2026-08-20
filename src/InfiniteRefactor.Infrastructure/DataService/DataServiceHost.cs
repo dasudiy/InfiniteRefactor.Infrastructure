@@ -450,8 +450,12 @@ namespace InfiniteRefactor.Infrastructure.DataService
 
         internal void ConnectionClosed(DataServiceClientBase client)
         {
-            if (!activeClients.TryRemove(client.GetHashCode(), out _)) return;
+            if (client == null)
+            {
+                return;
+            }
 
+            activeClients.TryRemove(client.GetHashCode(), out _);
             ClientDisconnected?.Invoke(this, SimpleArgument.Create(client));
             Log.Info($"client {client.Url} disconnected...");
         }
