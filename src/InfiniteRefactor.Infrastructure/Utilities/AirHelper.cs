@@ -202,6 +202,7 @@ namespace InfiniteRefactor.Infrastructure.Utilities
             if (airportCode.In("TFU", "CTU")) { return "CTU"; }
             if (airportCode.In("WHA")) { return "WHU"; }
             if (airportCode.In("DDR")) { return "RKZ"; }
+            if (airportCode.In("JNH")) { return "JXS"; }
 
             return airportCode;
         }
