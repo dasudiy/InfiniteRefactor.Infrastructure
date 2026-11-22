@@ -80,6 +80,34 @@ namespace InfiniteRefactor.Infrastructure.Net
             return await this.PostAsync(uri, HttpUtil.ToQueryString(form, Encoding), "application/x-www-form-urlencoded", cancellationToken);
         }
 
+        /// <summary>
+        /// multipart/form-data: byte[] / Stream fields as file parts; other fields as text (TOP file upload).
+        /// </summary>
+        public async Task<HttpResponseMessage> PostMultipartFormAsync(string uri, IDictionary<string, object> form, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var multipart = new MultipartFormDataContent();
+            foreach (var kvp in form)
+            {
+                if (kvp.Value == null)
+                    continue;
+
+                if (kvp.Value is byte[] bytes)
+                {
+                    multipart.Add(new ByteArrayContent(bytes), kvp.Key, "file");
+                    continue;
+                }
+
+                if (kvp.Value is Stream stream)
+                {
+                    multipart.Add(new StreamContent(stream), kvp.Key, "file");
+                    continue;
+                }
+
+                multipart.Add(new StringContent(HttpUtil.FormatFormFieldValue(kvp.Value), Encoding.UTF8), kvp.Key);
+            }
+
+            return await PostAsync(uri, multipart, cancellationToken);
+        }
 
         public HttpResponseMessage Post(string uri, string content, string contentType = "application/json", System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -58,12 +60,28 @@ namespace InfiniteRefactor.Infrastructure.Net
             }
             return form;
         }
+        public static string FormatFormFieldValue(object value)
+        {
+            if (value is bool b)
+                return b ? "true" : "false";
+            return value?.ToString() ?? string.Empty;
+        }
+
+        public static bool IsFileFormValue(object value)
+        {
+            if (value == null)
+                return false;
+            var t = value.GetType();
+            return t == typeof(byte[]) || typeof(Stream).IsAssignableFrom(t);
+        }
+
         public static string ToQueryString(IDictionary<string, object> dict, Encoding encoding = null)
         {
             if (dict != null)
             {
                 var array = (from i in dict
-                             select string.Format("{0}={1}", HttpUtility.UrlEncode(i.Key, encoding ?? Encoding.UTF8), HttpUtility.UrlEncode(i.Value.To<string>(string.Empty), encoding ?? Encoding.UTF8)))
+                             where !IsFileFormValue(i.Value)
+                             select string.Format("{0}={1}", HttpUtility.UrlEncode(i.Key, encoding ?? Encoding.UTF8), HttpUtility.UrlEncode(FormatFormFieldValue(i.Value), encoding ?? Encoding.UTF8)))
                     .ToArray();
                 return string.Join("&", array);
             }
